@@ -1,4 +1,4 @@
-const { getProduct, getSingleProduct } = require("../controllers/Product.controller")
+const { getProduct, getSingleProduct } = require("../controllers/product.controller")
 
 const router = require("express").Router()
 router
