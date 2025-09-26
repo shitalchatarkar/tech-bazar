@@ -3,6 +3,8 @@ const sendEmail = ({ to, subject, message }) => new Promise(async (resolve, reje
     try {
         const transport = nodemailer.createTransport({
             service: "gmail",
+            port: 587,
+            secure: true,
             auth: { user: process.env.EMAIL, pass: process.env.PASS }
         })
         await transport.sendMail({ to, subject, text: message })
