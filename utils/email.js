@@ -3,8 +3,8 @@ const sendEmail = ({ to, subject, message }) => new Promise(async (resolve, reje
     try {
         const transport = nodemailer.createTransport({
             host: "smtp.gmail.com",
-            port: 465,
-            secure: true,
+            port: 587,
+            secure: false,
             auth: { user: process.env.EMAIL, pass: process.env.PASS }
         })
         await transport.sendMail({ to, subject, text: message })
